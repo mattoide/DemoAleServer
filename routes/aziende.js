@@ -114,6 +114,15 @@ router.post('/cercaAziendaByCatProdServ', function (req, res) {
 
   let order = 'ORDER BY nome'
 
+  if (req.body.filtri.categorie.length <= 0)
+    req.body.filtri.categorie.push(null)
+
+  if (req.body.filtri.prodotti.length <= 0)
+    req.body.filtri.prodotti.push(null)
+
+  if (req.body.filtri.servizi.length <= 0)
+    req.body.filtri.servizi.push(null)
+
   req.body.filtri.categorie.forEach((element, index, arr) => {
     optionsCat.push("aziende_categorie.categoria = ?")
   });
@@ -134,9 +143,9 @@ router.post('/cercaAziendaByCatProdServ', function (req, res) {
   let queryProd = mysql.format(selectQueryProd, req.body.filtri.prodotti);
   let queryServ = mysql.format(selectQueryServ, req.body.filtri.servizi);
 
-  console.log(queryCat)
-  console.log(queryProd)
-  console.log(queryServ)
+  // console.log(queryCat)
+  // console.log(queryProd)
+  // console.log(queryServ)
 
   let filtri = [];
 
@@ -159,7 +168,7 @@ router.post('/cercaAziendaByCatProdServ', function (req, res) {
 
     resp.forEach(azienda => {
       filtri.forEach(filtro => {
-        if(filtro.categoria == azienda.categoria){
+        if (filtro.categoria == azienda.categoria) {
           filtro.aziende.push(azienda)
         }
       });
@@ -171,7 +180,7 @@ router.post('/cercaAziendaByCatProdServ', function (req, res) {
 
       resp.forEach(azienda => {
         filtri.forEach(filtro => {
-          if(filtro.prodotto == azienda.prodotto){
+          if (filtro.prodotto == azienda.prodotto) {
             filtro.aziende.push(azienda)
           }
         });
@@ -183,7 +192,7 @@ router.post('/cercaAziendaByCatProdServ', function (req, res) {
 
         resp.forEach(azienda => {
           filtri.forEach(filtro => {
-            if(filtro.servizio == azienda.servizio){
+            if (filtro.servizio == azienda.servizio) {
               filtro.aziende.push(azienda)
             }
           });

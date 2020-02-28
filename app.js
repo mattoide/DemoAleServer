@@ -14,6 +14,8 @@ const optionsRouter = require('./routes/options')
 
 app.use(function(req, res, next) {
 
+  console.log(req.hostname)
+  console.log(req.url)
   next();
 
 });
