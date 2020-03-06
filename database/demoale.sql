@@ -13,7 +13,7 @@
 
 
 -- Dump della struttura del database demoale
-CREATE DATABASE IF NOT EXISTS `demoale` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `demoale` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `demoale`;
 
 -- Dump della struttura di tabella demoale.aziende
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `aziende` (
   UNIQUE KEY `nome` (`nome`)
 ) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dump dei dati della tabella demoale.aziende: ~4 rows (circa)
+-- Dump dei dati della tabella demoale.aziende: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aziende` ENABLE KEYS */;
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `aziende_categorie` (
   CONSTRAINT `FK_aziende_categorie_categorie` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dump dei dati della tabella demoale.aziende_categorie: ~6 rows (circa)
+-- Dump dei dati della tabella demoale.aziende_categorie: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende_categorie` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aziende_categorie` ENABLE KEYS */;
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `aziende_prodotti` (
   CONSTRAINT `FK_aziende_prodotti_prodotti` FOREIGN KEY (`prodotto`) REFERENCES `prodotti` (`prodotto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dump dei dati della tabella demoale.aziende_prodotti: ~2 rows (circa)
+-- Dump dei dati della tabella demoale.aziende_prodotti: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende_prodotti` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aziende_prodotti` ENABLE KEYS */;
 
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `aziende_servizi` (
   CONSTRAINT `FK_aziende_servizi_servizi` FOREIGN KEY (`servizio`) REFERENCES `servizi` (`servizio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Dump dei dati della tabella demoale.aziende_servizi: ~3 rows (circa)
+-- Dump dei dati della tabella demoale.aziende_servizi: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende_servizi` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aziende_servizi` ENABLE KEYS */;
 
