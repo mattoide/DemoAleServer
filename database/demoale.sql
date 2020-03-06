@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `aziende` (
   `indirizzo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.aziende: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende` DISABLE KEYS */;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `aziende_categorie` (
   KEY `FK_aziende_categorie_categorie` (`categoria`),
   CONSTRAINT `FK_aziende_categorie_aziende` FOREIGN KEY (`id_azienda`) REFERENCES `aziende` (`id`),
   CONSTRAINT `FK_aziende_categorie_categorie` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.aziende_categorie: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende_categorie` DISABLE KEYS */;
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `aziende_prodotti` (
   KEY `FK_aziende_prodotti_prodotti` (`prodotto`),
   CONSTRAINT `FK_aziende_prodotti_aziende` FOREIGN KEY (`id_azienda`) REFERENCES `aziende` (`id`),
   CONSTRAINT `FK_aziende_prodotti_prodotti` FOREIGN KEY (`prodotto`) REFERENCES `prodotti` (`prodotto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.aziende_prodotti: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende_prodotti` DISABLE KEYS */;
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `aziende_servizi` (
   KEY `FK_aziende_servizi_servizi` (`servizio`),
   CONSTRAINT `FK_aziende_servizi_aziende` FOREIGN KEY (`id_azienda`) REFERENCES `aziende` (`id`),
   CONSTRAINT `FK_aziende_servizi_servizi` FOREIGN KEY (`servizio`) REFERENCES `servizi` (`servizio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.aziende_servizi: ~0 rows (circa)
 /*!40000 ALTER TABLE `aziende_servizi` DISABLE KEYS */;
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `categoria` varchar(50) NOT NULL,
   PRIMARY KEY (`categoria`),
   UNIQUE KEY `categoria` (`categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.categorie: ~10 rows (circa)
 /*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `prodotti` (
   `prodotto` varchar(50) NOT NULL,
   PRIMARY KEY (`prodotto`),
   UNIQUE KEY `prodotto` (`prodotto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.prodotti: ~5 rows (circa)
 /*!40000 ALTER TABLE `prodotti` DISABLE KEYS */;
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `servizi` (
   `servizio` varchar(50) NOT NULL,
   PRIMARY KEY (`servizio`),
   UNIQUE KEY `servizio` (`servizio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.servizi: ~4 rows (circa)
 /*!40000 ALTER TABLE `servizi` DISABLE KEYS */;
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `toponimi` (
   `toponimo` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `toponimo` (`toponimo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella demoale.toponimi: ~5 rows (circa)
 /*!40000 ALTER TABLE `toponimi` DISABLE KEYS */;
