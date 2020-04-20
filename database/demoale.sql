@@ -2,7 +2,7 @@
 -- Host:                         127.0.0.1
 -- Versione server:              8.0.19 - MySQL Community Server - GPL
 -- S.O. server:                  Win64
--- HeidiSQL Versione:            10.3.0.5771
+-- HeidiSQL Versione:            11.0.0.5919
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -81,16 +81,18 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 -- Dump dei dati della tabella demoale.categorie: ~10 rows (circa)
 /*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
 INSERT INTO `categorie` (`categoria`) VALUES
-	('Fast Food'),
-	('Gelateria'),
-	('Paninoteca'),
-	('Pasticceria'),
-	('Pizzeria'),
-	('Pizzeria al taglio'),
-	('Ristorante'),
-	('Rosticceria'),
-	('Take Away'),
-	('Trattoria');
+	('CAFE'),
+	('GELATERIE'),
+	('PANINOTECHE'),
+	('PASTICCERIE'),
+	('PIZZA AL TAGLIO'),
+	('PIZZERIA'),
+	('PUB'),
+	('RISTORANTI'),
+	('ROSTICCERIA'),
+	('TAKE AWAY'),
+	('TRATTORIE'),
+	('WINE BAR');
 /*!40000 ALTER TABLE `categorie` ENABLE KEYS */;
 
 -- Dump della struttura di tabella demoale.prodotti
@@ -120,10 +122,16 @@ CREATE TABLE IF NOT EXISTS `servizi` (
 -- Dump dei dati della tabella demoale.servizi: ~4 rows (circa)
 /*!40000 ALTER TABLE `servizi` DISABLE KEYS */;
 INSERT INTO `servizi` (`servizio`) VALUES
-	('Accetta animali'),
+	('Accesso disabili'),
+	('Area bimbi'),
 	('Buoni pasto'),
-	('Buoni sconto'),
-	('Consegna a domicilio');
+	('Fascia prezzo'),
+	('Menù fissi'),
+	('Pet friendly'),
+	('Promozioni'),
+	('Senza glutine'),
+	('Solo vegan'),
+	('Wi-Fi');
 /*!40000 ALTER TABLE `servizi` ENABLE KEYS */;
 
 -- Dump della struttura di tabella demoale.toponimi
@@ -134,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `toponimi` (
   UNIQUE KEY `toponimo` (`toponimo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella demoale.toponimi: ~5 rows (circa)
+-- Dump dei dati della tabella demoale.toponimi: ~4 rows (circa)
 /*!40000 ALTER TABLE `toponimi` DISABLE KEYS */;
 INSERT INTO `toponimi` (`id`, `toponimo`) VALUES
 	(5, 'Contrada'),
