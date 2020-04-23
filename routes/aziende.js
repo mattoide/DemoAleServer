@@ -10,16 +10,18 @@ router.post('/registraAzienda', function (req, res) {
 
   let azienda = req.body.azienda;
 
-  let insertQuery = 'INSERT INTO ?? (??,??) VALUES (?,?)';
+  let insertQuery = 'INSERT INTO ?? (??,??,??,??,??,??,??,??,??,??,??,??) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';
 
-  let query = mysql.format(insertQuery, ["aziende", "nome", "indirizzo", azienda.nome, azienda.toponimo + " " + azienda.indirizzo + " " + azienda.civico]);
+  let query = mysql.format(insertQuery, ["aziende", 
+  "ragioneSociale", "email", "cel", "tel",  "toponimo", "indirizzo", "civico", "provincia", "cap", "apertura", "chiusura", "descrizione",
+  azienda.ragioneSociale, azienda.email, azienda.cel, azienda.tel, azienda.toponimo, azienda.indirizzo, azienda.civico, azienda.provincia, azienda.cap, azienda.apertura, azienda.chiusura, azienda.descrizione]);
 
   pool.query(query, (err, response) => {
 
     if (err) {
 
       if (err.errno == 1062) {
-        return res.status(500).send({ type: "input", msg: "Nome azienda gia inserito" });
+        return res.status(500).send({ type: "input", msg: "Ragione Sociale gia inserito" });
       }
       return res.status(500).send({ type: err.code, msg: err.message })
     }
@@ -112,7 +114,7 @@ router.post('/cercaAziendaByCatProdServ', function (req, res) {
   let baseServ = 'SELECT  DISTINCT aziende.*, aziende_servizi.* FROM  aziende, aziende_servizi WHERE (aziende.id = aziende_servizi.id_azienda) AND '
   let optionsServ = []
 
-  let order = 'ORDER BY nome'
+  let order = 'ORDER BY ragioneSociale'
 
   if (req.body.filtri.categorie.length <= 0)
     req.body.filtri.categorie.push(null)
