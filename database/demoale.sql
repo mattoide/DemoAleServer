@@ -19,13 +19,23 @@ USE `demoale`;
 -- Dump della struttura di tabella demoale.aziende
 CREATE TABLE IF NOT EXISTS `aziende` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
+  `ragioneSociale` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `cel` varchar(50) DEFAULT NULL,
+  `tel` varchar(50) DEFAULT NULL,
+  `toponimo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `indirizzo` varchar(50) NOT NULL,
+  `civico` varchar(50) NOT NULL,
+  `provincia` varchar(50) NOT NULL,
+  `cap` varchar(50) NOT NULL,
+  `apertura` varchar(50) NOT NULL,
+  `chiusura` varchar(50) NOT NULL,
+  `descrizione` mediumtext,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=191 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  UNIQUE KEY `ragioneSociale` (`ragioneSociale`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella demoale.aziende: ~0 rows (circa)
+-- Dump dei dati della tabella demoale.aziende: ~2 rows (circa)
 /*!40000 ALTER TABLE `aziende` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aziende` ENABLE KEYS */;
 
@@ -39,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `aziende_categorie` (
   CONSTRAINT `FK_aziende_categorie_categorie` FOREIGN KEY (`categoria`) REFERENCES `categorie` (`categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella demoale.aziende_categorie: ~0 rows (circa)
+-- Dump dei dati della tabella demoale.aziende_categorie: ~4 rows (circa)
 /*!40000 ALTER TABLE `aziende_categorie` DISABLE KEYS */;
 /*!40000 ALTER TABLE `aziende_categorie` ENABLE KEYS */;
 
@@ -78,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   UNIQUE KEY `categoria` (`categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella demoale.categorie: ~10 rows (circa)
+-- Dump dei dati della tabella demoale.categorie: ~12 rows (circa)
 /*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
 INSERT INTO `categorie` (`categoria`) VALUES
 	('CAFE'),
@@ -119,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `servizi` (
   UNIQUE KEY `servizio` (`servizio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella demoale.servizi: ~4 rows (circa)
+-- Dump dei dati della tabella demoale.servizi: ~10 rows (circa)
 /*!40000 ALTER TABLE `servizi` DISABLE KEYS */;
 INSERT INTO `servizi` (`servizio`) VALUES
 	('Accesso disabili'),
